@@ -1,0 +1,41 @@
+.container {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 20px;
+    top: 70px;
+    -webkit-box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
+    height : auto;
+}
+
+.khac{
+	margin-top: 20px;
+}
+
+.validation {
+	position: absolute;
+  font-size: .8em;
+  color: #a94442;
+}
+
+.font-for-label{
+  font-size: 12px;
+  font-family: time new roman;
+  text-align: left;
+}
+
+.button-submit{
+  margin-top: 20px;
+}
+
+.space-between-radio{
+  margin-left: 50px;
+}
+
+.test{
+  margin-top : 20px;
+}
+
+.demo{
+  border: 1px solid black;
+}

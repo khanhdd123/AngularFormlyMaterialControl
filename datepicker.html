@@ -1,0 +1,15 @@
+<am-date-picker 
+        ng-model="model[options.key]"
+        am-input-date-format="L"
+        am-input-label="{{options.templateOptions.label}}"
+        am-max-date="maxDate"
+        am-max-year="2015"
+        am-min-date="minDate"
+        am-min-year="2000"
+        am-popup-date-format="D/M"
+        am-today-button="Today"
+        am-show-input-icon="true"
+        am-locale ="vi"
+        myRule >
+</am-date-picker>
+<div ng-if="true" ng-messages="options.formControl.$error"><div ng-message="{{::name}}" ng-repeat="(name, message) in ::options.validation.messages">{{message(options.formControl.$viewValue, options.formControl.$modelValue, this)}}</div></div>

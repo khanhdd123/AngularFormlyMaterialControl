@@ -1,0 +1,239 @@
+@transition-time: 0.25s;
+@half-transition-time: @transition-time / 2;
+
+.am-date-picker__input {
+    cursor: pointer;
+}
+
+.am-date-picker__calendar-icon {
+    position: absolute;
+    top: -7px;
+    left: -12px;
+    right: auto;
+}
+
+.am-date-picker__clear-icon {
+    visibility: hidden;
+    position: absolute;
+    top: -3px;
+    right: -8px;
+
+    .md-icon-button {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        padding: 0
+    }
+}
+
+
+md-input-container:hover .am-date-picker__clear-icon {
+    visibility: visible;
+    outline: none;
+}
+
+.am-date-picker__container {
+    width: 300px;
+    min-width: 300px;
+    min-height: 450px;
+    overflow: hidden;
+
+    * {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        outline: none;
+    }
+
+    md-toolbar {
+        width:auto;
+    }
+}
+
+.am-date-picker__header-current-date {
+    padding: 15px 20px;
+
+    p {
+        margin: 0;
+        opacity: 0.7;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1.5em;
+    }
+}
+
+.am-date-picker__content {
+    min-height: 300px;
+    height: 300px;
+}
+
+
+.am-date-picker__month-year {
+    .md-icon-button {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        padding: 0;
+        margin: 0 6px;
+    }
+}
+
+.am-date-picker__chevron {
+}
+
+.am-date-picker__weekdays {
+    padding-left: 12px;
+    padding-right: 20px;
+
+    span {
+        opacity: 0.4;
+    }
+}
+
+.am-date-picker__calendar {
+    min-width: 293px;
+    height: 252px;
+    padding-left: 7px;
+
+    @time: 0.1s;
+    @delay: 0.5s;
+}
+
+.am-date-picker__empty-days {
+    float:left;
+    width: 31px;
+    height: 30px;
+    padding: 5px;
+}
+
+.am-date-picker__days {
+    button {
+        span {
+            color: rgba(0, 0, 0, .67);
+        }
+        &:disabled {
+            cursor: not-allowed;
+            span {
+                color: inherit;
+            }
+        }
+    }
+
+    .md-button {
+        padding: 0.3px;
+        margin: 0;
+        line-height: 0;
+        min-height: 0;
+        font-weight: 400;
+    }
+
+    .md-fab {
+        box-shadow: none;
+        height: 39.4px;
+        width: 40px;
+
+        span {
+            color: inherit;
+        }
+    }
+}
+
+.am-date-picker__day--is-today span {
+    font-weight: 600;
+}
+
+
+.am-date-picker__year-selector {
+    overflow-y: scroll;
+    margin: 5px 0;
+    height: 290px;
+}
+
+
+.am-date-picker__year {
+    width: 100%;
+    text-align: center;
+
+    button {
+        font-weight: 400;
+        span {
+            color: rgba(0, 0, 0, .67);
+        }
+    }
+
+    .md-fab {
+        box-shadow: none;
+
+        span {
+            color: inherit;
+        }
+    }
+
+}
+
+.am-date-picker__actions {
+    .md-button {
+        min-width: 50px;
+    }
+}
+
+
+.am-date-picker__animate-month-change {
+    @time: 0.1s;
+
+    &.next.ng-enter, &.next.ng-leave,
+    &.prev.ng-enter, &.prev.ng-leave {
+        -webkit-transition:all @time ease-in-out;
+        -moz-transition:all @time ease-in-out;
+        -o-transition:all @time ease-in-out;
+        transition:all @time ease-in-out;
+    }
+
+    &.next.ng-enter {
+        transform: translate(300px,0);
+    }
+
+    &.next.ng-enter.ng-enter-active {
+        transform: translate(0,0);
+    }
+
+    &.next.ng-leave.ng-leave-active {
+        transform: translate(-300px,0);
+    }
+
+    &.prev.ng-enter {
+        transform: translate(-300px,0);
+    }
+
+    &.prev.ng-enter.ng-enter-active {
+        transform: translate(0,0);
+    }
+
+    &.prev.ng-leave.ng-leave-active {
+        transform: translate(300px,0);
+    }
+}
+
+
+.am-date-picker__animate-year-selection {
+    @time: 0.1s;
+
+    &.ng-hide-remove {
+      -webkit-transition:all @time linear;
+      -moz-transition:all @time linear;
+      -o-transition:all @time linear;
+      transition:all @time linear;
+      opacity:0;
+    }
+
+    &.ng-hide-add,
+    &.ng-hide-add-active {
+        display: none;
+    }
+
+    &.ng-hide-remove.ng-hide-remove-active {
+      opacity:1;
+    }
+}

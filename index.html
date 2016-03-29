@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+    <link href="bower_components/am-date-picker-master/dist/am-date-picker.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+</head>
+<body ng-app="validationApp" ng-controller="ValidationController as vm">
+
+    <div class="container col-md-offset-2 col-md-8">
+        <form ng-submit="vm.onSubmit()" name="vm.form" novalidate>
+            <formly-form model="vm.model" fields="vm.fields" options="vm.options" form="vm.form">
+                <button type="submit" class="btn btn-primary submit-button" ng-disabled="vm.form.$invalid">Submit</button>
+            </formly-form>
+        </form>
+    </div>
+</body>
+    <script type="text/ng-template" id="input-template.html">
+      <input type="{{options.templateOptions.type || 'text'}}"
+           class="form-control"
+           id="{{id}}"
+           formly-dynamic-name="id"
+           formly-custom-validation="options.validators"
+           placeholder="{{options.templateOptions.placeholder}}"
+           aria-describedby="{{id}}_description"
+           ng-required="options.templateOptions.required"
+           ng-disabled="options.templateOptions.disabled"
+           ng-model="model[options.key]">
+    </script>
+    <script type="text/ng-template" id="checkbox-template.html">
+      <input type="checkbox"
+             id="{{id}}"
+             formly-dynamic-name="id"
+             formly-custom-validation="options.validators"
+             aria-describedby="{{id}}_description"
+             ng-required="options.templateOptions.required"
+             ng-disabled="options.templateOptions.disabled"
+             ng-model="model[options.key]">
+      {{options.templateOptions.label || 'Checkbox'}}
+      {{options.templateOptions.required ? '*' : ''}}
+    </script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="//npmcdn.com/angularjs-slider"></script>
+    <script src="bower_components\jquery\jquery.min.js"></script>
+    <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+    <script src="bower_components\angular-aria\angular-aria.min.js"></script>
+    <script src="bower_components\bower-angular-animate-master\angular-animate.min.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="node_modules/api-check/dist/api-check.js"></script>
+    <script src="node_modules/angular-formly/dist/formly.js"></script>
+    <script src="node_modules/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+    <script src="node_modules/angular-translate/dist/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+    <script src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/moment/locale/vi.js"></script>
+    <script type="text/javascript" src="bower_components/am-date-picker-master/dist/am-date-picker.min.js"></script>
+    <script src="bower_components\angular-material\angular-material.min.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="app.js"></script>
+    <script src="scripts/MainController.js"></script>
+    <script src="scripts/ValidationController.js"></script>
+    <script src="scripts/province.js"></script>
+</html>
